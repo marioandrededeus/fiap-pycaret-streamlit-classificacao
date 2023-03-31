@@ -12,6 +12,7 @@ st.set_page_config( page_title = 'Simulador - Case Ifood',
                     initial_sidebar_state = 'expanded')
 
 st.title('Simulador - Conversão de Vendas')
+
 with st.expander('Descrição do App', expanded = False):
     var_test = 5
     # st.write(var_test)
