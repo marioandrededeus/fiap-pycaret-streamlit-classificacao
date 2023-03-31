@@ -1,4 +1,5 @@
 #!pip install streamlit
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -21,7 +22,7 @@ with st.sidebar:
     c1, c2 = st.columns(2)
     c1.image('./images/logo_fiap.png', width = 100)
     c2.write('')
-    c2.subheader('Auto ML - Fiap [v1]')
+    c2.subheader('Auto ML - Fiap [v2]')
 
     # database = st.selectbox('Fonte dos dados de entrada (X):', ('CSV', 'Online'))
     database = st.radio('Fonte dos dados de entrada (X):', ('CSV', 'Online'))
@@ -62,7 +63,7 @@ if database == 'CSV':
 
             c2.metric('Qtd clientes True', value = qtd_true)
             c3.metric('Qtd clientes False', value = len(ypred) - qtd_true)
-            
+
             def color_pred(val):
                 color = 'olive' if val > treshold else 'orangered'
                 return f'background-color: {color}'
@@ -82,7 +83,6 @@ if database == 'CSV':
                             file_name = 'Predicoes.csv',
                             mime = 'text/csv')
 
-        
     else:
         st.warning('Arquivo CSV não foi carregado')
         # st.info('Arquivo CSV não foi carregado')
@@ -91,8 +91,3 @@ if database == 'CSV':
 
 else:
     st.error('Esta opção será desenvolvida no Entregável 1 da disciplina')
-
-
-
-
-
